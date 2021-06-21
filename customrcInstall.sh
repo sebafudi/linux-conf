@@ -14,8 +14,16 @@ if ! type "exa" &> /dev/null; then
     | grep "exa-linux-x86_64-v" \
     | grep "zip" \
     | cut -d '"' -f 4)
-  wget $temp -q --show-progress
+  wget $temp -q --show-progress -P ~
   temp=$(echo $temp | cut -d "/" -f 9)
-  unzip $temp bin/exa
-  rm $temp
+  unzip ~/$temp bin/exa -d ~
+  rm ~/$temp
+else
+  echo "exa is already installed"
+fi
+
+if [ ! -f ~/.customrc ]; then
+  wget https://raw.githubusercontent.com/sebafudi/linux-conf/main/.customrc -q --show-progress -P ~
+else
+  echo ".customrc already found"
 fi
