@@ -23,6 +23,7 @@ else
 fi
 
 if [ ! -f ~/.customrc ]; then
+  echo "Downloading .customrc"
   wget https://raw.githubusercontent.com/sebafudi/linux-conf/main/.customrc -q --show-progress -P ~
 else
   echo ".customrc already found"
