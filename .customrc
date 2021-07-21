@@ -1,1 +1,2 @@
-alias l='exa --long -a --header --git --sort=type --group-directories-first'
+alias l='exa --long --header --git --sort=type --group-directories-first'
+alias la='exa --long -a --header --git --sort=type --group-directories-first'
